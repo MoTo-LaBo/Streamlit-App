@@ -38,4 +38,8 @@
 - deploy するにあたってどんなライブラリーが使用されているかを把握しておかないと,うまく deploy できない
 ### pip で streamlit の version 確認
     pip freeze| grep strea
+
+    pip freeze| grep pandas
+
+    pip freeze| grep numpy
 - requirements.txt に記述する
