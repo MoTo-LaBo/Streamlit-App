@@ -22,6 +22,9 @@ for i in range(100):
 
 # 画像を表示させる: pillo(上記でfrom PIL import する)
 st.write('Display Image')
+"""
+#### 左のサイドバー(show Image) を チェック
+"""
 
 # インタラクティブなウィジェット
 if st.sidebar.checkbox('show Image'):
