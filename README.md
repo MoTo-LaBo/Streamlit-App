@@ -1,5 +1,6 @@
 # Streamlit 基礎
 > https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/main.py
+- 作成した App URL ↑
 - Streamlit を使用して App 作成から deploy
 ### 1.venv で仮想環境構築&仮想環境の中へ
     python -m venv venv
