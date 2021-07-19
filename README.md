@@ -5,7 +5,7 @@
 0. 機能の挙動確認・機能一覧 App URL ↓
 > https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/main.py
 1. 株価可視化 App(app.py)
->
+> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/app.py
 2. 物体検出 App()
 >
 3. 音声生成 App()
