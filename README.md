@@ -1,8 +1,20 @@
-# Streamlit 基礎
-> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/main.py
-- 作成した App URL ↑
+# Streamlit 基礎 App 作成
 - Streamlit を使用して App 作成から deploy
-### 1.venv で仮想環境構築&仮想環境の中へ
+- 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
+## 今回作成する App 一覧
+0. 機能の挙動確認・機能一覧 App URL ↓
+> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/main.py
+1. 株価可視化 App(app.py)
+>
+2. 物体検出 App()
+>
+3. 音声生成 App()
+>
+4. YouTube Data 動画分析 App
+>
+5. スクレイピング App
+>
+### 1. venv で仮想環境構築&仮想環境の中へ
     python -m venv venv
 
     # 仮想環境へ
@@ -45,3 +57,8 @@
 
     pip freeze| grep numpy
 - requirements.txt に記述する
+## 1. 株価可視化 App(app.py)
+- Yahooファイナンスから株価の情報を取得
+- yfinance(python library:PyPi)
+> https://pypi.org/project/yfinance/
+  - API の登録がないのでかなり簡単
