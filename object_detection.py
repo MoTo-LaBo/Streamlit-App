@@ -12,10 +12,6 @@ from azure.cognitiveservices.vision.computervision.models import OperationStatus
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 import streamlit as st
 
-st.write("ENDPOINT", st.secrets["ENDPOINT"])
-st.write("KEY", st.secrets["KEY"])
-
-
 st.write("Has environment variables been set:",
          os.environ["ENDPOINT"] == st.secrets["ENDPOINT"],
          os.environ["KEY"] == st.secrets["KEY"]
