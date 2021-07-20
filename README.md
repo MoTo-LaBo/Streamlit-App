@@ -10,10 +10,7 @@
 > https://share.streamlit.io/moto-labo/streamlit-app/main/object_detection.py
 ### 3. 音声生成 App()
 >
-### 4. YouTube Data 動画分析 App
->
-### 5. スクレイピング App
->
+
 ## venv で仮想環境構築&仮想環境の中へ
     python -m venv venv
 
