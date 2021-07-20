@@ -6,8 +6,10 @@
 > https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/main.py
 1. 株価可視化 App(app.py)
 > https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/app.py
+- yfinance を使用
 2. 物体検出 App()
->
+> i
+- Azure Computer Vision 使用
 3. 音声生成 App()
 >
 4. YouTube Data 動画分析 App
