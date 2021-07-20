@@ -14,11 +14,14 @@ import time
 
 import json
 
-with open('secret.json') as f:
-    secret = json.load(f)
+# with open('secret.json') as f:
+#     secret = json.load(f)
+# KEY = secret['KEY']
+# ENDPOINT = secret['ENDPOINT']
+# secret.json は githubにあげることはできないので
+st.write("ENDPOINT:", st.secrets["ENDPOINT"])
+st.write("KEY:", st.secrets["KEY"])
 
-KEY = secret['KEY']
-ENDPOINT = secret['ENDPOINT']
 
 computervision_client = ComputerVisionClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
