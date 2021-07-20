@@ -28,7 +28,7 @@ st.write('Display Image')
 
 # インタラクティブなウィジェット
 if st.sidebar.checkbox('show Image'):
-    img = Image.open('static/moto_ogp.png')
+    img = Image.open('static/img/moto_ogp.png')
     st.image(img, caption='MoTo LaBo', use_column_width=True)
 
 # checkbox にチェックが入っているかどうか(True or Falseを返す)

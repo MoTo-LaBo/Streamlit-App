@@ -2,19 +2,19 @@
 - Streamlit を使用して App 作成から deploy
 - 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
 ## 今回作成する App 一覧
-0. 機能の挙動確認・機能一覧 App URL ↓
+### 0. 機能の挙動確認・機能一覧 App URL ↓
 > https://share.streamlit.io/moto-labo/streamlit-app/main/test.py
-1. 株価可視化 App(app.py)
+### 1. 株価可視化 App(app.py)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/stock_prices.py
    - yfinance を使用
-1. 物体検出 App()
+### 2. 物体検出 App(object_detection)
 > i
    - Azure Computer Vision 使用
-3. 音声生成 App()
+### 3. 音声生成 App()
 >
-4. YouTube Data 動画分析 App
+### 4. YouTube Data 動画分析 App
 >
-5. スクレイピング App
+### 5. スクレイピング App
 >
 ### 1. venv で仮想環境構築&仮想環境の中へ
     python -m venv venv
