@@ -14,7 +14,7 @@ import time
 
 import json
 
-with open('secret.json') as f:
+with open('.vscode/secret.json') as f:
     secret = json.load(f)
 
 KEY = secret['KEY']
