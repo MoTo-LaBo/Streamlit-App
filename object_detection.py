@@ -1,20 +1,21 @@
-import streamlit as st
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
-from msrest.authentication import CognitiveServicesCredentials
-
-from array import array
-import os
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-import sys
-import time
-
 import json
-
+import time
+import sys
+from PIL import ImageFont
+from PIL import ImageDraw
+from PIL import Image
 import os
+from array import array
+from msrest.authentication import CognitiveServicesCredentials
+from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
+from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
+import streamlit as st
+
+st.write("ENDPOINT", st.secrets["ENDPOINT"])
+st.write("KEY", st.secrets["KEY"])
+
+
 st.write("Has environment variables been set:",
          os.environ["ENDPOINT"] == st.secrets["ENDPOINT"],
          os.environ["KEY"] == st.secrets["KEY"]
@@ -24,9 +25,6 @@ st.write("Has environment variables been set:",
 # KEY = secret['KEY']
 # ENDPOINT = secret['ENDPOINT']
 # secret.json は githubにあげることはできないので
-st.write("ENDPOINT", st.secrets["ENDPOINT"])
-st.write("KEY", st.secrets["KEY"])
-
 
 computervision_client = ComputerVisionClient(st.write("ENDPOINT"), CognitiveServicesCredentials(st.write("KEY")))
 
