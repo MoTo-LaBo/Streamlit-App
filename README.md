@@ -3,11 +3,11 @@
 - 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
 ## 今回作成する App 一覧
 0. 機能の挙動確認・機能一覧 App URL ↓
-> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/main.py
+> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/test.py
 1. 株価可視化 App(app.py)
-> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/app.py
+> https://share.streamlit.io/moto-labo/streamlit-introdaction_practice/main/stock_prices.py
 - yfinance を使用
-2. 物体検出 App()
+1. 物体検出 App()
 > i
 - Azure Computer Vision 使用
 3. 音声生成 App()
