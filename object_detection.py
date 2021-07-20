@@ -14,16 +14,21 @@ import time
 
 import json
 
+import os
+st.write("Has environment variables been set:",
+         os.environ["ENDPOINT"] == st.secrets["ENDPOINT"],
+         os.environ["KEY"] == st.secrets["KEY"]
+         )
 # with open('secret.json') as f:
 #     secret = json.load(f)
 # KEY = secret['KEY']
 # ENDPOINT = secret['ENDPOINT']
 # secret.json は githubにあげることはできないので
-st.write("ENDPOINT:", st.secrets["ENDPOINT"])
-st.write("KEY:", st.secrets["KEY"])
+st.write("ENDPOINT", st.secrets["ENDPOINT"])
+st.write("KEY", st.secrets["KEY"])
 
 
-computervision_client = ComputerVisionClient(ENDPOINT, CognitiveServicesCredentials(KEY))
+computervision_client = ComputerVisionClient(st.write("ENDPOINT"), CognitiveServicesCredentials(st.write("KEY")))
 
 
 def get_tags(filepath):
