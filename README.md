@@ -8,13 +8,14 @@
 > https://share.streamlit.io/moto-labo/streamlit-app/main/stock_prices.py
    - yfinance を使用
 ### 2. 物体検出 App(object_detection)
-> i
+> https://share.streamlit.io/moto-labo/streamlit-app/main/object_detection.py
    - Azure Computer Vision 使用
      - API の KEY, ENDPOINT 管理は要注意！！
      - .gitignore は必須
      - 開発中  API : secret.json
      - deploy API : [Secrets Management]
        - >(https://www.notion.so/Secrets-Management-730c82af2fc048d383d668c4049fb9bf)
+       - >https://docs.streamlit.io/en/stable/deploy_streamlit_app.html#secrets-management
 # with open('secret.json') as f:
 ### 3. 音声生成 App()
 >
