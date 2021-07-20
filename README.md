@@ -4,43 +4,34 @@
 ## 今回作成する App 一覧
 ### 0. 機能の挙動確認・機能一覧 App URL ↓
 > https://share.streamlit.io/moto-labo/streamlit-app/main/test.py
-### 1. 株価可視化 App(app.py)
+### 1. 株価可視化 App(stock_prices.py)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/stock_prices.py
-   - yfinance を使用
 ### 2. 物体検出 App(object_detection)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/object_detection.py
-   - Azure Computer Vision 使用
-     - API の KEY, ENDPOINT 管理は要注意！！
-     - .gitignore は必須
-     - 開発中  API : secret.json
-     - deploy API : [Secrets Management]
-       - >(https://www.notion.so/Secrets-Management-730c82af2fc048d383d668c4049fb9bf)
-       - >https://docs.streamlit.io/en/stable/deploy_streamlit_app.html#secrets-management
-# with open('secret.json') as f:
 ### 3. 音声生成 App()
 >
 ### 4. YouTube Data 動画分析 App
 >
 ### 5. スクレイピング App
 >
-### 1. venv で仮想環境構築&仮想環境の中へ
+## venv で仮想環境構築&仮想環境の中へ
     python -m venv venv
 
     # 仮想環境へ
     source venv/bin/activate
-### 2. jupyter lab install & 起動
+### jupyter lab install & 起動
     pip install jupyterlab
 
     # jupyter lab 立ち上げ
     jupyter lab
-### 3. Streamlit install
+### Streamlit install
     pip install streamlit
-### 4. デモを開く
+### デモを開く
     streamlit hello
 - xcode や wached の install を促される
 #### watchdog
      pip install watchdog
-### 5. 必要なライブラリ main.py に import して runさせる
+### 必要なライブラリ main.py に import して runさせる
     streamlit run < 実行したいfile >.py
 - 表示されている url クリック
 ## pandas 1.3.0 で error 発生
@@ -66,8 +57,17 @@
 
     pip freeze| grep numpy
 - requirements.txt に記述する
-## 1. 株価可視化 App(app.py)
+## 1. 株価可視化 App(stock_prices.py)
 - Yahooファイナンスから株価の情報を取得
 - yfinance(python library:PyPi)
 > https://pypi.org/project/yfinance/
   - API の登録がないのでかなり簡単
+  - yfinance を使用
+## 2. 物体検出 App(object_detecation.py)
+   - Azure Computer Vision 使用
+     - API の KEY, ENDPOINT 管理は要注意！！
+     - .gitignore は必須
+     - 開発中  API : secret.json
+     - deploy API : [Secrets Management]
+       - >(https://www.notion.so/Secrets-Management-730c82af2fc048d383d668c4049fb9bf)
+       - >https://docs.streamlit.io/en/stable/deploy_streamlit_app.html#secrets-management
