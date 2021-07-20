@@ -22,7 +22,7 @@ st.write("Has environment variables been set:",
 # ENDPOINT = secret['ENDPOINT']
 # secret.json は githubにあげることはできないので
 
-computervision_client = ComputerVisionClient("ENDPOINT", CognitiveServicesCredentials("KEY"))
+computervision_client = ComputerVisionClient(st.secrets["ENDPOINT"], CognitiveServicesCredentials(st.secrets["KEY"]))
 
 
 def get_tags(filepath):
