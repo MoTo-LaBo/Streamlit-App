@@ -12,15 +12,11 @@ from azure.cognitiveservices.vision.computervision.models import OperationStatus
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 import streamlit as st
 
-# st.write("Has environment variables been set:",
-#          os.environ["ENDPOINT"] == st.secrets["ENDPOINT"],
-#          os.environ["KEY"] == st.secrets["KEY"]
-#          )
-# with open('secret.json') as f:
+# secret.json は githubにあげることはできないので streamlit [Secrets Management]
 #     secret = json.load(f)
 # KEY = secret['KEY']
 # ENDPOINT = secret['ENDPOINT']
-# secret.json は githubにあげることはできないので
+
 
 computervision_client = ComputerVisionClient(st.secrets["ENDPOINT"], CognitiveServicesCredentials(st.secrets["KEY"]))
 
