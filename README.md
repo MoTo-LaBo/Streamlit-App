@@ -8,9 +8,9 @@
 > https://share.streamlit.io/moto-labo/streamlit-app/main/stock_prices.py
 ### 2. 物体検出 App(object_detection)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/object_detection.py
-### 3. 音声生成 App()
->
-
+### {JSON} Placeholder(test API)
+- test 用 API
+> https://jsonplaceholder.typicode.com/
 ## venv で仮想環境構築&仮想環境の中へ
     python -m venv venv
 
