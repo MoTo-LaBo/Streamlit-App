@@ -1,7 +1,15 @@
 # Streamlit 基礎 App 作成
+> https://docs.streamlit.io/en/stable/index.html
 - Streamlit を使用して App 作成から deploy
 - 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
-## 今回作成する App 一覧
+  - python だけで web app を制作できる
+  - pandas の DataFrame やグラフ、図を埋め込むことができる
+  - button, slidbarといった動的な web app も作成できる
+  - Streamlit sharing service を使用する事簡単に deploy できる
+    - ※ GitHub との連携は必須
+## 成果 App URL
+> app url
+### 今回作成した prototype App 一覧
 ### 0. 機能の挙動確認・機能一覧 App URL ↓
 > https://share.streamlit.io/moto-labo/streamlit-app/main/test.py
 ### 1. 株価可視化 App(stock_prices.py)
@@ -23,6 +31,8 @@
     jupyter lab
 ### Streamlit install
     pip install streamlit
+
+    pip install streamlit --upgrade
 ### デモを開く
     streamlit hello
 - xcode や wached の install を促される

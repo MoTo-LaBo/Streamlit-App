@@ -1,10 +1,31 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from PIL import Image
 import time
 
-st.title('Steamlit 超入門')
+from streamlit.elements import layouts
+
+# page layout
+st.set_page_config(
+    page_title="test",
+    # page_icon="🧊",
+    # layout="wide",
+    initial_sidebar_state="auto",
+)
+
+# title, header, subheader, text
+st.title('Steamlit 基礎')
+st.header('steramlit での開発')
+st.subheader('strealit を実装しながら学ぶ')
+st.text('「 think to build, build to think 」- つくるために考え・考えるためにつくる -')
+
+# 画像を表示させる: pillo(上記でfrom PIL import する)
+st.write('Display Image')
+"""
+#### 左のサイドバー(show Image) を チェック
+"""
 
 # プログレスバー (import time)
 st.write('プレグレスバー')
@@ -19,12 +40,6 @@ for i in range(100):
     bar.progress(i + 1)
     time.sleep(0.01)
 
-
-# 画像を表示させる: pillo(上記でfrom PIL import する)
-st.write('Display Image')
-"""
-#### 左のサイドバー(show Image) を チェック
-"""
 
 # インタラクティブなウィジェット
 if st.sidebar.checkbox('show Image'):
@@ -65,9 +80,9 @@ if button:
 expander = st.beta_expander('問い合わせ')
 expander.write('問い合わせ内容を書く')
 
-
+# markdown,text
 """
-## DataFrame
+# DataFrame
 """
 
 df = pd.DataFrame({
@@ -103,21 +118,29 @@ st.table(df.style.highlight_max(axis=0))
     import pandas as pd
 """
 
-# チャートを記述
-df2 = pd.DataFrame(
-    np.random.rand(20, 3),
+# Streamlit が用意しているグラフ関数(チャートを記述)
+df4 = pd.DataFrame(
+    np.random.randn(20, 3),
     columns=['a', 'b', 'c']
 )
-df2
-
+df4
 # 折れ線グラフでプロットする
-st.line_chart(df2)
-
+st.line_chart(df4)
 # 似たようなモノ(塗りつぶし)
-st.area_chart(df2)
-
+st.area_chart(df4)
 # 棒グラフ
-st.bar_chart(df2)
+st.bar_chart(df4)
+
+"""
+# Matpltlib を使用した表示
+"""
+fig = plt.figure(figsize=(10, 5))
+ax = plt.axes()
+x = [105, 210, 301, 440, 500]
+y = [10, 20, 30, 50, 60]
+ax.plot(x, y)
+
+st.pyplot(fig)
 
 # map で表示させる
 df3 = pd.DataFrame(

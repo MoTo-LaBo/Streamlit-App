@@ -1,6 +1,8 @@
-streamlit==0.84.1
+streamlit==0.84.2
 pandas==1.2.5
 numpy==1.21.0
+matplotlib==3.4.2
+matplotlib-inline==0.1.2
 altair==4.1.0
 yfinance==0.1.63
 pip==21.1.3

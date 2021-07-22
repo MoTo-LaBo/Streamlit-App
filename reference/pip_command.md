@@ -21,8 +21,12 @@
     --format <format-name>オプション
 #### 最新でないパッケージのみ一覧表示
     -o, --outdatedオプション
+
+    pip list -o
 #### 最新のパッケージのみ一覧表示
     -u, --uptodateオプション
+
+    pip list -u
 ### インストール済パッケージの一覧表示
     pip freeze
 - インストールされているパッケージの名称とバージョン番号の一覧がfreeze形式で表示される
@@ -36,3 +40,8 @@
 - バージョン情報のほか、依存パッケージやホームページなどの詳細情報が表示される
 ### pip 自体 upgrade
     pip install --upgrade pip
+### package 指定でのversion up
+    pip install <package-name>==<version>
+### 一括での version up
+    pip-upgrade-all
+- 上記は alias で指定。dotfile 閲覧

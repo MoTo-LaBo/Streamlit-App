@@ -20,6 +20,14 @@ import streamlit as st
 
 computervision_client = ComputerVisionClient(st.secrets["ENDPOINT"], CognitiveServicesCredentials(st.secrets["KEY"]))
 
+# page layout
+st.set_page_config(
+    page_title="object detection",
+    # page_icon="🧊",
+    # layout="wide",
+    initial_sidebar_state="auto",
+)
+
 
 def get_tags(filepath):
     local_image = open(filepath, "rb")

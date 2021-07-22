@@ -4,6 +4,14 @@ import yfinance as yf
 import altair as alt
 import streamlit as st
 
+# page layout
+st.set_page_config(
+    page_title="stock prices",
+    # page_icon="🧊",
+    # layout="wide",
+    initial_sidebar_state="auto",
+)
+
 st.title('米国株価可視化App')
 
 st.sidebar.write("""
