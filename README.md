@@ -1,13 +1,5 @@
-# Streamlit 基礎 App 作成
-> https://docs.streamlit.io/en/stable/index.html
-- Streamlit を使用して App 作成から deploy
-- 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
-  - python だけで web app を制作できる
-  - pandas の DataFrame やグラフ、図を埋め込むことができる
-  - button, slidbarといった動的な web app も作成できる
-  - Streamlit sharing service を使用する事簡単に deploy できる
-    - ※ GitHub との連携は必須
-## 成果 App URL
+# Streamlit App devlopmente
+### 成果 App URL
 > app url
 ### 今回作成した prototype App 一覧
 ### 0. 機能の挙動確認・機能一覧 App URL ↓
@@ -16,6 +8,22 @@
 > https://share.streamlit.io/moto-labo/streamlit-app/main/stock_prices.py
 ### 2. 物体検出 App(object_detection)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/object_detection.py
+## Streamlit を使用して App 作成から deploy
+- 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
+  - python だけで web app を制作できる
+  - pandas の DataFrame やグラフ、図を埋め込むことができる
+  - button, slidbarといった動的な web app も作成できる
+  - Streamlit sharing service を使用する事簡単に deploy できる
+    - ※ GitHub との連携は必須
+- Streamlit
+  > https://docs.streamlit.io/en/stable/index.html
+- Streamlit sharing
+  > https://streamlit.io/
+- Matplotlib
+  > https://matplotlib.org/
+- pydeck
+  > https://deckgl.readthedocs.io/en/latest/
+-
 ### {JSON} Placeholder(test API)
 - test 用 API
 > https://jsonplaceholder.typicode.com/

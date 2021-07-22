@@ -1,9 +1,11 @@
+from pydeck.bindings import layer
 import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import time
+import pydeck as pdk
 
 from streamlit.elements import layouts
 
@@ -22,14 +24,21 @@ st.subheader('strealit を実装しながら学ぶ')
 st.text('「 think to build, build to think 」- つくるために考え・考えるためにつくる -')
 
 # 画像を表示させる: pillo(上記でfrom PIL import する)
-st.write('Display Image')
+# インタラクティブなウィジェット
+if st.sidebar.checkbox('show Image'):
+    img = Image.open('static/img/moto_ogp.png')
+    st.image(img, caption='MoTo LaBo', use_column_width=True)
+
+# checkbox にチェックが入っているかどうか(True or Falseを返す)
+# check が入っていれば True. 入っていなければ False
+# これを利用して画像を表示させるかどうかを判断させる
+# if文を使用して利用できる
 """
-#### 左のサイドバー(show Image) を チェック
+### 左のサイドバー(show Image) を チェック
 """
 
 # プログレスバー (import time)
 st.write('プレグレスバー')
-'Start!!'
 
 # 空の要素を追加して、空の要素を latest_iteration に入れる (object思考:python)
 latest_iteration = st.empty()
@@ -40,16 +49,6 @@ for i in range(100):
     bar.progress(i + 1)
     time.sleep(0.01)
 
-
-# インタラクティブなウィジェット
-if st.sidebar.checkbox('show Image'):
-    img = Image.open('static/img/moto_ogp.png')
-    st.image(img, caption='MoTo LaBo', use_column_width=True)
-
-# checkbox にチェックが入っているかどうか(True or Falseを返す)
-# check が入っていれば True. 入っていなければ False
-# これを利用して画像を表示させるかどうかを判断させる
-# if文を使用して利用できる
 
 # select box
 option = st.sidebar.selectbox(
@@ -142,10 +141,38 @@ ax.plot(x, y)
 
 st.pyplot(fig)
 
-# map で表示させる
-df3 = pd.DataFrame(
-    np.random.rand(100, 2)/[50, 50] + [35.69, 139.70],
+# 東京県庁所在地 data plot : 緯度軽度を定義
+"""
+# 東京県庁所在地　付近
+"""
+tokyo_lat = 35.69  # 緯度:latitude
+tokyo_lon = 139.69  # 経度:longitude
+
+df_tokyo = pd.DataFrame(
+    np.random.randn(1000, 2)/[50, 50]+[tokyo_lat, tokyo_lon],
     columns=['lat', 'lon']
 )
-df3
-st.map(df3)
+
+df_tokyo
+
+st.map(df_tokyo)
+
+"""
+# 3D Maping
+"""
+# 1. view の設定：地図上の場所(緯度・経度)、見る角度
+view = pdk.ViewState(latitude=tokyo_lat, longitude=tokyo_lon, pitch=50, zoom=11)
+
+# 2. Layer 設定 : どの可視化方法にするのかを指定
+hexagon_layer = pdk.Layer('HexagonLayer',  # Layer 指定
+                          data=df_tokyo,  # pd data
+                          get_position=['lon', 'lat'],  # 位置情報を表す緯度経度の列名（lon,latの順番でないとerrorになる）
+                          elevation_scale=6,  # extruded の scale の高さを変更できる
+                          radius=100,  # extruded の半径指定
+                          extruded=True  # 棒の高さ有無か
+                          )
+
+# 3. Deck : view,Layer 情報を引数に指定。 map にレンダンリングする
+layer_map = pdk.Deck(layers=hexagon_layer, initial_view_state=view)  # 先に Layer
+
+st.pydeck_chart(layer_map)
