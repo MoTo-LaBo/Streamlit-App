@@ -42,6 +42,4 @@
     pip install --upgrade pip
 ### package 指定でのversion up
     pip install <package-name>==<version>
-### 一括での version up
-    pip-upgrade-all
-- 上記は alias で指定。dotfile 閲覧
+
