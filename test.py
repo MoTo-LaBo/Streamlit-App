@@ -17,29 +17,7 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
-# title, header, subheader, text
-st.title('Steamlit 基礎')
-st.header('steramlit での開発')
-st.subheader('strealit を実装しながら学ぶ')
-st.text('「 think to build, build to think 」- つくるために考え・考えるためにつくる -')
-
-# 画像を表示させる: pillo(上記でfrom PIL import する)
-# インタラクティブなウィジェット
-if st.sidebar.checkbox('show Image'):
-    img = Image.open('static/img/moto_ogp.png')
-    st.image(img, caption='MoTo LaBo', use_column_width=True)
-
-# checkbox にチェックが入っているかどうか(True or Falseを返す)
-# check が入っていれば True. 入っていなければ False
-# これを利用して画像を表示させるかどうかを判断させる
-# if文を使用して利用できる
-"""
-### 左のサイドバー(show Image) を チェック
-"""
-
 # プログレスバー (import time)
-st.write('プレグレスバー')
-
 # 空の要素を追加して、空の要素を latest_iteration に入れる (object思考:python)
 latest_iteration = st.empty()
 bar = st.progress(0)
@@ -48,6 +26,36 @@ for i in range(100):
     latest_iteration.text(f'Iteration{i+1}')
     bar.progress(i + 1)
     time.sleep(0.01)
+st.write('start!!!')
+
+
+# title, header, subheader, text
+st.title('Streamlit 基礎')
+st.header('streramlit での開発')
+st.subheader('streamlit を実装しながら学ぶ')
+st.text('「 think to build, build to think 」- つくるために考え・考えるためにつくる -')
+
+"""
+### (show Image) を チェックすると画像が表示されます
+"""
+
+# 画像を表示させる: pillo(上記でfrom PIL import する)
+# インタラクティブなウィジェット
+if st.checkbox('show Image'):
+    img = Image.open('static/img/moto_ogp.png')
+    st.image(img, caption='MoTo LaBo', use_column_width=True)
+
+# checkbox にチェックが入っているかどうか(True or Falseを返す)
+# check が入っていれば True. 入っていなければ False
+# これを利用して画像を表示させるかどうかを判断させる
+# if文を使用して利用できる
+
+# radio button
+option_radio = st.sidebar.radio(
+    "好きな果物を教えて下さい",
+    ('マスカット', '無花果', '桃', '枇杷', '梨')
+)
+st.write('あなたが選んだ果物は:', option_radio)
 
 
 # select box
@@ -60,13 +68,28 @@ option = st.sidebar.selectbox(
 
 # .sideber でサイド表示に移動できる
 # text入力.スライダーによる動的変化
-st.sidebar.write('Interactive Widgets')
-
 text = st.sidebar.text_input('あなたの趣味を教えて下さい')
 condition = st.sidebar.slider('あなたの今の調子は？', 0, 100, 50)
 
 'あなたの趣味:', text,
 'コンディション:', condition
+
+# slider
+values = st.slider(
+    '数値の範囲を指定してください',
+    0.0, 100.0, (25.0, 75.0))
+st.write('values:', values)
+
+# multiselect
+options = st.multiselect(
+    '興味ある言語を選択して下さい',
+    ['Python', 'Go', 'JavaScript', 'Ruby', 'C', 'C++', 'R'],
+    ['Python', 'Go'])
+
+
+# expander:エクスパンダー
+expander = st.beta_expander('問い合わせ')
+expander.write('問い合わせ内容を書く')
 
 # 2 colum で表示する場合
 left_colmun, rigiht_column = st.beta_columns(2)
@@ -75,34 +98,37 @@ button = left_colmun.button('右カラムに文字表示')
 if button:
     rigiht_column.write('ここは右カラムです')
 
-# expander:エクスパンダー
-expander = st.beta_expander('問い合わせ')
-expander.write('問い合わせ内容を書く')
 
 # markdown,text
 """
 # DataFrame
+### ボタンが押されるとDataFrameが表示されます
 """
 
-df = pd.DataFrame({
-    '1列目': [1, 2, 3, 4],
-    '2列目': [10, 20, 30, 40]
-})
+# button
+option_button = st.button('ボタン')
 
-# 下記はどちらも表を表示してくれる
+if option_button == True:
 
-# write : 表サイズは変更できない
-st.write(df)
+    df = pd.DataFrame({
+        '1列目': [1, 2, 3, 4],
+        '2列目': [10, 20, 30, 40]
+    })
+    # write : 表サイズは変更できない
+    st.write(df)
 
-# dataframe : 引数を指定する事によって表サイズを変更できる
-st.dataframe(df,  width=100, height=100)
+    # dataframe : 引数を指定する事によって表サイズを変更できる
+    st.dataframe(df,  width=100, height=100)
 
-# .style.highlight_max(axis=0): 列もしくは行で最大のモノをハイライトしてくれる
-# axis=0 : 列 / axis=1 : 行
-st.dataframe(df.style.highlight_max(axis=0))
+    # .style.highlight_max(axis=0): 列もしくは行で最大のモノをハイライトしてくれる
+    # axis=0 : 列 / axis=1 : 行
+    st.dataframe(df.style.highlight_max(axis=0))
 
-# table で表を表示する事ができる
-st.table(df.style.highlight_max(axis=0))
+    # table で表を表示する事ができる
+    st.table(df.style.highlight_max(axis=0))
+else:
+    st.write('ボタンを押してください')
+
 
 # 動的な表を使用したい場合は dataframe
 # 静的な表を使用したい場合は table

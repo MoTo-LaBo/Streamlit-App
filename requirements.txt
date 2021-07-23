@@ -3,6 +3,7 @@ pandas==1.2.5
 numpy==1.21.1
 matplotlib==3.4.2
 matplotlib-inline==0.1.2
+pydeck==0.6.2
 altair==4.1.0
 yfinance==0.1.63
 pip==21.1.3

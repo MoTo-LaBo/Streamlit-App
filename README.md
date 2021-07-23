@@ -86,3 +86,7 @@
      - deploy API : [Secrets Management]
        - >(https://www.notion.so/Secrets-Management-730c82af2fc048d383d668c4049fb9bf)
        - >https://docs.streamlit.io/en/stable/deploy_streamlit_app.html#secrets-management
+## 3. 日本の賃金 data 可視化 (RESAS)
+- RESAS(リーサス): 地域経済分析システム
+> https://resas.go.jp/#/13/13101
+  - 国民一人あたりの賃金 data を使用する
