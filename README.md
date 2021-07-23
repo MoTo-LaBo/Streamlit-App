@@ -1,12 +1,10 @@
 # Streamlit App devlopmente
 ### 成果 App URL :  日本賃金 data 可視化 App
-> app url
+> https://share.streamlit.io/moto-labo/streamlit-app/main/wage_visualization.py
 ### 今回作成した prototype App 一覧
-### 0. 機能の挙動確認・機能一覧 App URL ↓
-> https://share.streamlit.io/moto-labo/streamlit-app/main/test.py
-### 1. 株価可視化 App(stock_prices.py)
+#### 1. 株価可視化 App(stock_prices.py)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/stock_prices.py
-### 2. 物体検出 App(object_detection)
+#### 2. 物体検出 App(object_detection)
 > https://share.streamlit.io/moto-labo/streamlit-app/main/object_detection.py
 ## Streamlit を使用して App 作成から deploy
 - 作成・実装しながら streamlit を理解し、今後の App devlopment に生かす
