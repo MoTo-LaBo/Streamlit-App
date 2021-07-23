@@ -17,7 +17,7 @@ jp_lat_lon = jp_lat_lon.rename(columns={'pref_name': '都道府県名'})
 
 df_pref_map = df_pref_ind[(df_pref_ind['年齢'] == '年齢計') & (df_pref_ind['集計年'] == 2019)]
 df_pref_map = pd.merge(df_pref_map, jp_lat_lon, on='都道府県名')
-df_pref_map['一人当たり賃金（相対値）'] =  ((df_pref_map['一人当たり賃金（万円）']-df_pref_map['一人当たり賃金（万円）'].min())/(df_pref_map['一人当たり賃金（万円）'].max()-df_pref_map['一人当たり賃金（万円）'].min()))
+df_pref_map['一人当たり賃金（相対値）'] = ((df_pref_map['一人当たり賃金（万円）']-df_pref_map['一人当たり賃金（万円）'].min())/(df_pref_map['一人当たり賃金（万円）'].max()-df_pref_map['一人当たり賃金（万円）'].min()))
 
 view = pdk.ViewState(
     longitude=139.691648,
@@ -32,7 +32,7 @@ layer = pdk.Layer(
     opacity=0.4,
     get_position=["lon", "lat"],
     threshold=0.3,
-    get_weight = '一人当たり賃金（相対値）'
+    get_weight='一人当たり賃金（相対値）'
 )
 
 layer_map = pdk.Deck(
@@ -45,7 +45,6 @@ st.pydeck_chart(layer_map)
 show_df = st.checkbox('Show DataFrame')
 if show_df == True:
     st.write(df_pref_map)
-
 
 
 st.header('■集計年別の一人当たり賃金（万円）の推移')
@@ -71,18 +70,17 @@ st.header('■年齢階級別の全国一人あたり平均賃金（万円）')
 df_mean_bubble = df_jp_ind[df_jp_ind['年齢'] != '年齢計']
 
 fig = px.scatter(df_mean_bubble,
-                x="一人当たり賃金（万円）",
-                y="年間賞与その他特別給与額（万円）",
-                range_x=[150,700],
-                range_y=[0,150],
-                size="所定内給与額（万円）",
-	            size_max = 38,
-                color="年齢",
-                animation_frame="集計年",
-                animation_group="年齢")
+                 x="一人当たり賃金（万円）",
+                 y="年間賞与その他特別給与額（万円）",
+                 range_x=[150, 700],
+                 range_y=[0, 150],
+                 size="所定内給与額（万円）",
+                 size_max=38,
+                 color="年齢",
+                 animation_frame="集計年",
+                 animation_group="年齢")
 
 st.plotly_chart(fig)
-
 
 
 st.header('■産業別の賃金推移')
@@ -102,14 +100,14 @@ df_mean_categ = df_jp_category[(df_jp_category["集計年"] == option_year)]
 max_x = df_mean_categ[option_wage].max() + 50
 
 fig = px.bar(df_mean_categ,
-            x=option_wage,
-            y="産業大分類名",
-            color="産業大分類名",
-            animation_frame="年齢",
-            range_x=[0,max_x],
-            orientation='h',
-            width=800,
-            height=500)
+             x=option_wage,
+             y="産業大分類名",
+             color="産業大分類名",
+             animation_frame="年齢",
+             range_x=[0, max_x],
+             orientation='h',
+             width=800,
+             height=500)
 st.plotly_chart(fig)
 
 

@@ -1,5 +1,5 @@
 # Streamlit App devlopmente
-### 成果 App URL
+### 成果 App URL :  日本賃金 data 可視化 App
 > app url
 ### 今回作成した prototype App 一覧
 ### 0. 機能の挙動確認・機能一覧 App URL ↓
@@ -19,11 +19,12 @@
   > https://docs.streamlit.io/en/stable/index.html
 - Streamlit sharing
   > https://streamlit.io/
+- plotly
+  > https://plotly.com/python/
 - Matplotlib
   > https://matplotlib.org/
 - pydeck
   > https://deckgl.readthedocs.io/en/latest/
--
 ### {JSON} Placeholder(test API)
 - test 用 API
 > https://jsonplaceholder.typicode.com/
@@ -90,3 +91,6 @@
 - RESAS(リーサス): 地域経済分析システム
 > https://resas.go.jp/#/13/13101
   - 国民一人あたりの賃金 data を使用する
+### バブルチャート
+- 縦軸・横軸・バブルサイズの３軸で表現される
+- ３次元の情報を２次元で表す事ができる
